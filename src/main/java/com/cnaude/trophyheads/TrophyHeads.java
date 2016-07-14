@@ -164,11 +164,59 @@ public class TrophyHeads extends JavaPlugin implements Listener {
             logDebug("Left clicked: " + block.getType().name());
             if (block.getType().equals(Material.SKULL)) {
                 BlockState bs = block.getState();
-                org.bukkit.block.Skull skull = (org.bukkit.block.Skull) bs;
+                org.bukkit.block.Skull skullSexy = (org.bukkit.block.Skull) bs;
                 String pName = "Unknown";
-                String message = "Wut?";
-                logDebug("Skull type: " + skull.getSkullType().name());
-                //String message;
+                String message;
+                
+                logDebug("Skull type: " + skullSexy.getSkullType().name());
+                if (skullSexy.getSkullType().equals(SkullType.PLAYER)) {
+                    String message;
+                    if (skullSexy.hasOwner()) {
+                        pName = skullSexy.getOwner();
+                        String message;
+                        if (CUSTOM_SKINS.containsValue(pName)) {
+                            message = (String)SKULL_MESSAGES.get(getCustomSkullType(pName));
+                            } else {
+                            message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.name());
+                        }
+                    }
+                    else
+                    {
+                        message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
+                    }
+                }
+                else
+                {
+                    String message;
+                    if (skullSexy.getSkullType().toString().equals(SkullType.CREEPER.toString())) {
+                        message = (String)SKULL_MESSAGES.get(EntityType.CREEPER.toString());
+                    }
+                    else
+                    {
+                        String message;
+                        if (skullSexy.getSkullType().toString().equals(SkullType.SKELETON.toString()))
+                        {
+                            message = (String)SKULL_MESSAGES.get(EntityType.SKELETON.toString());
+                        }
+                        else
+                        {
+                            String message;
+                            if (skullSexy.getSkullType().toString().equals(SkullType.WITHER.toString()))
+                            {
+                                message = (String)SKULL_MESSAGES.get(EntityType.WITHER.toString());
+                            }
+                            else
+                            {
+                                String message;
+                                if (skullSexy.getSkullType().toString().equals(SkullType.ZOMBIE.toString())) {
+                                    message = (String)SKULL_MESSAGES.get(EntityType.ZOMBIE.toString());
+                                    } else {
+                                    message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
+                                }
+                            }
+                        }
+                    }
+                }
                 if (pName == null) {
                     pName = "Unknown";
                 }
