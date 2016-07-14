@@ -71,6 +71,21 @@ public class TrophyHeads extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        LOG_HEADER = "  _______              _            ";
+        LOG_HEADER = " |__   __|            | |           ";
+        LOG_HEADER = "    | |_ __ ___  _ __ | |__  _   _  ";
+        LOG_HEADER = "    | | '__/ _ \| '_ \| '_ \| | | | ";
+        LOG_HEADER = "    | | | | (_) | |_) | | | | |_| | ";
+        LOG_HEADER = "  _ |_|_|  \___/| .__/|_| |_|\__, | ";
+        LOG_HEADER = " | |  | |       | |    | |    __/ | ";
+        LOG_HEADER = " | |__| | ___  _|_|  __| |___|___/  ";
+        LOG_HEADER = " |  __  |/ _ \/ _` |/ _` / __|      ";
+        LOG_HEADER = " | |  | |  __/ (_| | (_| \__ \      ";
+        LOG_HEADER = " |_|  |_|\___|\__,_|\__,_|___/      ";
+        LOG_HEADER = "                                    ";
+        LOG_HEADER = " Version v1.12.8-TNT      2016/7/13 ";
+        LOG_HEADER = "                                    ";
+        LOG_HEADER = " Unofficial build provided by TNTUP ";
         LOG_HEADER = "[" + this.getName() + "]";
         randomGenerator = new Random();
         pluginFolder = getDataFolder();
