@@ -72,21 +72,21 @@ public class TrophyHeads extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         LOG_HEADER = "[" + this.getName() + "]";
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "  _______              _            ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " |__   __|            | |           ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "    | |_ __ ___  _ __ | |__  _   _  ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "    | | '__/ _ \\| '_ \\| '_ \\| | | | ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "    | | | | (_) | |_) | | | | |_| | ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "  _ |_|_|  \\___/| .__/|_| |_|\\__, | ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " | |  | |       | |    | |    __/ | ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " | |__| | ___  _|_|  __| |___|___/  ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " |  __  |/ _ \\/ _` |/ _` / __|      ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " | |  | |  __/ (_| | (_| \\__ \\      ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " |_|  |_|\\___|\\__,_|\\__,_|___/      ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "                                    ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " Version v1.12.8-TNT      2016/7/13 ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "                                    ");
-        LOG.info(ChatColor.GOLD + LOG_HEADER + " Unofficial build provided by TNTUP ");
+        LOG.info(LOG_HEADER + "  _______              _            ");
+        LOG.info(LOG_HEADER + " |__   __|            | |           ");
+        LOG.info(LOG_HEADER + "    | |_ __ ___  _ __ | |__  _   _  ");
+        LOG.info(LOG_HEADER + "    | | '__/ _ \\| '_ \\| '_ \\| | | | ");
+        LOG.info(LOG_HEADER + "    | | | | (_) | |_) | | | | |_| | ");
+        LOG.info(LOG_HEADER + "  _ |_|_|  \\___/| .__/|_| |_|\\__, | ");
+        LOG.info(LOG_HEADER + " | |  | |       | |    | |    __/ | ");
+        LOG.info(LOG_HEADER + " | |__| | ___  _|_|  __| |___|___/  ");
+        LOG.info(LOG_HEADER + " |  __  |/ _ \\/ _` |/ _` / __|      ");
+        LOG.info(LOG_HEADER + " | |  | |  __/ (_| | (_| \\__ \\      ");
+        LOG.info(LOG_HEADER + " |_|  |_|\\___|\\__,_|\\__,_|___/      ");
+        LOG.info(LOG_HEADER + "                                    ");
+        LOG.info(LOG_HEADER + " Version v1.12.8-TNT      2016/7/13 ");
+        LOG.info(LOG_HEADER + "                                    ");
+        LOG.info(LOG_HEADER + " Unofficial build provided by TNTUP ");
         randomGenerator = new Random();
         pluginFolder = getDataFolder();
         configFile = new File(pluginFolder, "config.yml");
@@ -104,7 +104,7 @@ public class TrophyHeads extends JavaPlugin implements Listener {
             shapelessRecipe.addIngredient(1, renameItem);
             getServer().addRecipe(shapelessRecipe);
         }
-        LOG.info(ChatColor.GOLD + LOG_HEADER + "INIT DONE! Go tell at Cnaude he's sexy and awesome! <3 <3 <3 <3 ");
+        LOG.info(LOG_HEADER + "INIT DONE! Go tell at Cnaude he's sexy and awesome! <3 <3 <3 <3 ");
     }
 
     public String getCustomSkullType(String name) {
