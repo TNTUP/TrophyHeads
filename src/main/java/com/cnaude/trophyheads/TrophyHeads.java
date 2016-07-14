@@ -56,6 +56,8 @@ public class TrophyHeads extends JavaPlugin implements Listener {
     private static boolean renameEnabled = false;
     private static boolean playerSkin = true;
     private static String nonTropyHeadMessage = "";
+    private static boolean sneakPunchInfo = true;
+    private static boolean noBreak = true;
     private static final CaseInsensitiveMap<List<String>> ITEMS_REQUIRED = new CaseInsensitiveMap<>();
     private static final CaseInsensitiveMap<Integer> DROP_CHANCES = new CaseInsensitiveMap<>();
     private static final CaseInsensitiveMap<String> CUSTOM_SKINS = new CaseInsensitiveMap<>();
@@ -145,8 +147,14 @@ public class TrophyHeads extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
         Action action = event.getAction();
+        if (!sneakPunchInfo) {
+            return;
+        }
         Player player = event.getPlayer();
-
+        if (!player.isSneaking()) {
+            return;
+        }
+        
         if (!player.hasPermission("trophyheads.info")) {
             logDebug("Player does not have permission: trophyheads.info");
             return;
@@ -464,6 +472,12 @@ public class TrophyHeads extends JavaPlugin implements Listener {
         playerSkin = getConfig().getBoolean("player-skin");
         logDebug("Player skins: " + playerSkin);
 
+        sneakPunchInfo = getConfig().getBoolean("sneak-punch-info");
+        logDebug("Sneak punch info: " + sneakPunchInfo);
+      
+        noBreak = getConfig().getBoolean("sneak-punch-no-break");
+        logDebug("Sneak punch no break: " + noBreak);
+    
         nonTropyHeadMessage = ChatColor.translateAlternateColorCodes('&', (getConfig().getString("non-th-message", "&eThat is a Custom head!")));
         logDebug("Non TH message: " + nonTropyHeadMessage);
 
