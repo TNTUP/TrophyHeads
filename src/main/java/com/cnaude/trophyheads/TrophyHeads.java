@@ -160,76 +160,25 @@ public class TrophyHeads extends JavaPlugin implements Listener {
             return;
         }
         if (event.getAction().equals(Action.LEFT_CLICK_BLOCK)) {
-            Block block = event.getClickedBlock();
+            org.bukkit.block.Block block = event.getClickedBlock();
             logDebug("Left clicked: " + block.getType().name());
             if (block.getType().equals(Material.SKULL)) {
                 BlockState bs = block.getState();
-                logDebug("Block state: " + bs.toString());
+                org.bukkit.block.Skull skull = (org.bukkit.block.Skull) bs;
                 Skull skull = (Skull)bs;
                 String pName = "Unknown";
         
                 logDebug("Skull type: " + skull.getSkullType().name());
                 String message;
-                String message;
-                if (skull.getSkullType().equals(SkullType.PLAYER)) {
-                    String message;
-                    if (skull.hasOwner()) {
-                        pName = skull.getOwner();
-                        String message;
-                        if (CUSTOM_SKINS.containsValue(pName)) {
-                            message = (String)SKULL_MESSAGES.get(getCustomSkullType(pName));
-                            } 
-                            else 
-                            {
-                            message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.name());
-                        }
-                    }
-                    else
-                    {
-                        message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
-                    }
+                if (pName == null) {
+                    pName = "Unknown";
                 }
-                else
+                if (message == null) {
+                    message = "";
+                }
+                if (INFO_BLACKLIST.contains(pName.toLowerCase()))
                 {
-                    String message;
-                    if (skull.getSkullType().toString().equals(SkullType.CREEPER.toString())) {
-                        message = (String)SKULL_MESSAGES.get(EntityType.CREEPER.toString());
-                    }
-                    else
-                    {
-                        String message;
-                        if (skull.getSkullType().toString().equals(SkullType.SKELETON.toString())) {
-                            message = (String)SKULL_MESSAGES.get(EntityType.SKELETON.toString());
-                        }
-                        else
-                        {
-                            String message;
-                            if (skull.getSkullType().toString().equals(SkullType.WITHER.toString())) {
-                                message = (String)SKULL_MESSAGES.get(EntityType.WITHER.toString());
-                            }
-                            else
-                            {
-                                String message;
-                                if (skull.getSkullType().toString().equals(SkullType.ZOMBIE.toString())) {
-                                    message = (String)SKULL_MESSAGES.get(EntityType.ZOMBIE.toString());
-                                } 
-                                else 
-                                {
-                                    message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
-                                    }
-                                }
-                            }
-                       }
-                    }
-                    if (pName == null) {
-                        pName = "Unknown";
-                    }
-                    if (message == null) {
-                        message = "";
-                    }
-                    if (INFO_BLACKLIST.contains(pName.toLowerCase()))
-                    {
-                    logDebug("Ignoring: " + pName);
+                logDebug("Ignoring: " + pName);
                 }
                 else
                 {
