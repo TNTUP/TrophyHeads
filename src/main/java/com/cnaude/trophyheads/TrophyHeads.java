@@ -168,7 +168,7 @@ public class TrophyHeads extends JavaPlugin implements Listener {
                 String pName = "Unknown";
                 String message = "Wut?";
                 logDebug("Skull type: " + skull.getSkullType().name());
-                String message;
+                //String message;
                 if (pName == null) {
                     pName = "Unknown";
                 }
