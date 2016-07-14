@@ -72,21 +72,21 @@ public class TrophyHeads extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         LOG_HEADER = "[" + this.getName() + "]";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "  _______              _            ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |__   __|            | |           ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | |_ __ ___  _ __ | |__  _   _  ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | | '__/ _ \\| '_ \\| '_ \\| | | | ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | | | | (_) | |_) | | | | |_| | ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "  _ |_|_|  \\___/| .__/|_| |_|\\__, | ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |  | |       | |    | |    __/ | ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |__| | ___  _|_|  __| |___|___/  ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |  __  |/ _ \\/ _` |/ _` / __|      ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |  | |  __/ (_| | (_| \\__ \\      ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |_|  |_|\\___|\\__,_|\\__,_|___/      ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "                                    ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " Version v1.12.8-TNT      2016/7/13 ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "                                    ";
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " Unofficial build provided by TNTUP ";
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "  _______              _            ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |__   __|            | |           ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | |_ __ ___  _ __ | |__  _   _  ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | | '__/ _ \\| '_ \\| '_ \\| | | | ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "    | | | | (_) | |_) | | | | |_| | ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "  _ |_|_|  \\___/| .__/|_| |_|\\__, | ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |  | |       | |    | |    __/ | ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |__| | ___  _|_|  __| |___|___/  ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |  __  |/ _ \\/ _` |/ _` / __|      ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " | |  | |  __/ (_| | (_| \\__ \\      ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " |_|  |_|\\___|\\__,_|\\__,_|___/      ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "                                    ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " Version v1.12.8-TNT      2016/7/13 ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "                                    ");
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + " Unofficial build provided by TNTUP ");
         randomGenerator = new Random();
         pluginFolder = getDataFolder();
         configFile = new File(pluginFolder, "config.yml");
@@ -104,7 +104,7 @@ public class TrophyHeads extends JavaPlugin implements Listener {
             shapelessRecipe.addIngredient(1, renameItem);
             getServer().addRecipe(shapelessRecipe);
         }
-        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "INIT DONE! Go tell at Cnaude he's sexy and awesome! <3 <3 <3 <3 ";
+        sender.sendMessage(ChatColor.GOLD + LOG_HEADER + "INIT DONE! Go tell at Cnaude he's sexy and awesome! <3 <3 <3 <3 ");
     }
 
     public String getCustomSkullType(String name) {
