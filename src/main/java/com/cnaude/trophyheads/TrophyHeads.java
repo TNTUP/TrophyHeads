@@ -166,7 +166,7 @@ public class TrophyHeads extends JavaPlugin implements Listener {
                 BlockState bs = block.getState();
                 org.bukkit.block.Skull skull = (org.bukkit.block.Skull) bs;
                 String pName = "Unknown";
-        
+                String message = "Wut?";
                 logDebug("Skull type: " + skull.getSkullType().name());
                 String message;
                 if (pName == null) {
