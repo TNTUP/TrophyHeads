@@ -178,48 +178,68 @@ public class TrophyHeads extends JavaPlugin implements Listener {
                         String message;
                         if (CUSTOM_SKINS.containsValue(pName)) {
                             message = (String)SKULL_MESSAGES.get(getCustomSkullType(pName));
-                            } else {
+                            } 
+                            else 
+                            {
                             message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.name());
                         }
                     }
                     else
                     {
-                    message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
-                }
-            }
-            else
-            {
-                String message;
-                if (skull.getSkullType().toString().equals(SkullType.CREEPER.toString())) {
-                    message = (String)SKULL_MESSAGES.get(EntityType.CREEPER.toString());
+                        message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
+                    }
                 }
                 else
                 {
-                String message;
-                if (skull.getSkullType().toString().equals(SkullType.SKELETON.toString())) {
-                    message = (String)SKULL_MESSAGES.get(EntityType.SKELETON.toString());
+                    String message;
+                    if (skull.getSkullType().toString().equals(SkullType.CREEPER.toString())) {
+                        message = (String)SKULL_MESSAGES.get(EntityType.CREEPER.toString());
                     }
                     else
                     {
-                    String message;
-                    if (skull.getSkullType().toString().equals(SkullType.WITHER.toString())) {
-                        message = (String)SKULL_MESSAGES.get(EntityType.WITHER.toString());
+                        String message;
+                        if (skull.getSkullType().toString().equals(SkullType.SKELETON.toString())) {
+                            message = (String)SKULL_MESSAGES.get(EntityType.SKELETON.toString());
                         }
                         else
                         {
-                        String message;
-                        if (skull.getSkullType().toString().equals(SkullType.ZOMBIE.toString())) {
-                            message = (String)SKULL_MESSAGES.get(EntityType.ZOMBIE.toString());
-                        } 
-                        else 
-                        {
-                        message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
-                        }
+                            String message;
+                            if (skull.getSkullType().toString().equals(SkullType.WITHER.toString())) {
+                                message = (String)SKULL_MESSAGES.get(EntityType.WITHER.toString());
+                            }
+                            else
+                            {
+                                String message;
+                                if (skull.getSkullType().toString().equals(SkullType.ZOMBIE.toString())) {
+                                    message = (String)SKULL_MESSAGES.get(EntityType.ZOMBIE.toString());
+                                } 
+                                else 
+                                {
+                                    message = (String)SKULL_MESSAGES.get(EntityType.PLAYER.toString());
+                                    }
+                                }
+                            }
+                       }
                     }
+                    if (pName == null) {
+                        pName = "Unknown";
+                    }
+                    if (message == null) {
+                        message = "";
+                    }
+                    if (INFO_BLACKLIST.contains(pName.toLowerCase()))
+                    {
+                    logDebug("Ignoring: " + pName);
                 }
+                else
+                {
+                    message = message.replaceAll("%%NAME%%", pName);
+                    message = ChatColor.translateAlternateColorCodes('&', message);
+                    player.sendMessage(message);
+                }
+                event.setCancelled(noBreak);
             }
-        }    
-
+        }
         if (action.equals(Action.RIGHT_CLICK_BLOCK)) {
             org.bukkit.block.Block block = event.getClickedBlock();
             logDebug(action.name() + ": " + block.getType().name());
