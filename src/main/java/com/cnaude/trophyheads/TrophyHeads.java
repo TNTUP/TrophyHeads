@@ -80,8 +80,8 @@ public class TrophyHeads extends JavaPlugin implements Listener {
         LOG_HEADER = " | |  | |       | |    | |    __/ | ";
         LOG_HEADER = " | |__| | ___  _|_|  __| |___|___/  ";
         LOG_HEADER = " |  __  |/ _ \\/ _` |/ _` / __|      ";
-        LOG_HEADER = " | |  | |  __/ (_| | (_| \\__ \      ";
-        LOG_HEADER = " |_|  |_|\___|\__,_|\__,_|___/      ";
+        LOG_HEADER = " | |  | |  __/ (_| | (_| \\__ \\      ";
+        LOG_HEADER = " |_|  |_|\\___|\\__,_|\\__,_|___/      ";
         LOG_HEADER = "                                    ";
         LOG_HEADER = " Version v1.12.8-TNT      2016/7/13 ";
         LOG_HEADER = "                                    ";
@@ -104,6 +104,7 @@ public class TrophyHeads extends JavaPlugin implements Listener {
             shapelessRecipe.addIngredient(1, renameItem);
             getServer().addRecipe(shapelessRecipe);
         }
+        LOG_HEADER = "INIT DONE! Go tell at Cnaude he's sexy and awesome! <3 <3 <3 <3 ";
     }
 
     public String getCustomSkullType(String name) {
